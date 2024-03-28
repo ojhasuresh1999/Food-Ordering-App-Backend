@@ -3,6 +3,7 @@ import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
 import morgan from "morgan";
+import { v2 as cloudinary } from "cloudinary";
 import myUserRoute from "./routes/MyUserRoutes";
 
 /*
@@ -16,6 +17,15 @@ mongoose
   .catch((err) => {
     console.log("Failed to connect to MongoDB", err);
   });
+
+/*
+ * CLOUDINARY CONFIGURATION
+ */
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 const app = express();
 
