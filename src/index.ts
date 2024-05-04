@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import morgan from "morgan";
 import { v2 as cloudinary } from "cloudinary";
 import myUserRoute from "./routes/MyUserRoutes";
+import myRestaurantRoute from './routes/MyRestaurantRoute';
 
 /*
  * MONGODB CONNECTION
@@ -49,6 +50,7 @@ app.get("/health", async (req: Request, res: Response) => {
  * Routes
  */
 app.use("/api/my/user", myUserRoute);
+app.use('/api/my/restaurant', myRestaurantRoute);
 
 const PORT = process.env.PORT || 3000;
 
