@@ -36,7 +36,7 @@ const createMyRestaurant = async (req: Request, res: Response) => {
     res.status(201).json({ message: "Restaurant created", restaurant });
   } catch (error) {
     console.log("🚀 ~ createMyRestaurant ~ error:", error);
-    res.status(500).json({ message: "Failed to create restaurant" });
+    res.status(500).json({ message: "Failed to create restaurant", error });
   }
 };
 
