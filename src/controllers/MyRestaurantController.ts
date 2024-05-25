@@ -11,7 +11,6 @@ const getMyRestaurant = async (req: Request, res: Response) => {
     }
     res.status(200).json({ restaurant });
   } catch (error) {
-    console.log("🚀 ~ getMyRestaurant ~ error:", error);
     res.status(500).json({ message: "Failed to get restaurant" });
   }
 };
